@@ -111,7 +111,7 @@ To keep maintenance low, define the boundary explicitly:
 Notes: 
 - The MX400 is required by the installer for the specified hydraulic design (with buffer tank). It is not replaced by the EMS-ESP gateway.
 - The EMS-ESP gateway allows Home Assistant to monitor the system and orchestrate setpoints/modes.
-- A physical room controller (e.g., Buderus RC100/RC200) is still recommended for commissioning and as a reliable manual fallback.
+- A physical room controller (e.g., Buderus RC100) is still recommended for commissioning and as a reliable manual fallback.
 - **Hierarchy of Control:** To prevent conflicts, the Buderus controller (RC100) will own the primary heating schedule. Home Assistant will act as a supervisor, sending high-level commands for exceptions (e.g., "Away Mode," "Vacation Mode," temporary boosts). Manual changes on the physical controller will be respected by Home Assistant and not overridden automatically.
 
 **How Home Assistant overrides the Buderus schedule (exception handling)**
