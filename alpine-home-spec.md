@@ -114,6 +114,19 @@ Notes:
 - A physical room controller (e.g., Buderus RC100/RC200) is still recommended for commissioning and as a reliable manual fallback.
 - **Hierarchy of Control:** To prevent conflicts, the Buderus controller (RC100) will own the primary heating schedule. Home Assistant will act as a supervisor, sending high-level commands for exceptions (e.g., "Away Mode," "Vacation Mode," temporary boosts). Manual changes on the physical controller will be respected by Home Assistant and not overridden automatically.
 
+**Buderus support / warranty concern when connecting EMS-ESP (practical guidance)**
+
+- **Reality check:** EMS-ESP is a third‑party device. Some installers/manufacturers may refuse to troubleshoot issues while third‑party bus devices are attached, or may claim it’s “unsupported”. Whether this affects warranty/support is ultimately a policy/contract question (ask your installer in writing).
+- **Risk reduction approach (recommended):**
+  - Install EMS-ESP as a **non-invasive, reversible add-on** on the EMS/EMS+ bus (no cutting proprietary harnesses; no permanent modifications).
+  - Keep **Buderus-native controls** (RC100/MX400) as the primary operating interface so the system remains serviceable without HA.
+  - Start with **read-only monitoring** in HA, then enable only coarse commands (mode/preset/setpoint) once stability is proven.
+  - Document a “service mode” step: **unplug EMS-ESP** before a service visit if the installer requests a fully vendor-standard setup.
+- **What to confirm with the installer:**
+  - Where the EMS/EMS+ bus may be tapped safely.
+  - That adding a bus listener/controller doesn’t violate their commissioning/support conditions.
+  - That the system remains within spec with HA disconnected (it should).
+
 **How Home Assistant overrides the Buderus schedule (exception handling)**
 
 - **Principle:** HA does not rewrite the RC100 schedule. Instead it activates a vendor-supported *override mode* (preferably **Holiday/Vacation**) with an explicit end time, then returns control to the normal schedule.
