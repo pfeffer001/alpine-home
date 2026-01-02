@@ -108,11 +108,11 @@ To keep maintenance low, define the boundary explicitly:
 - Heating actuator relays: Shelly Pro 4PM
 - Thermal actuators: Möhlenhoff Alpha 5 (230V NC)
 
-Notes: 
-- The MX400 is required by the installer for the specified hydraulic design (with buffer tank). It is not replaced by the EMS-ESP gateway.
-- The EMS-ESP gateway allows Home Assistant to monitor the system and orchestrate setpoints/modes.
-- A physical room controller (e.g., Buderus RC100) is still recommended for commissioning and as a reliable manual fallback.
-- **Hierarchy of Control:** To prevent conflicts, the Buderus controller (RC100) will own the primary heating schedule. Home Assistant will act as a supervisor, sending high-level commands for exceptions (e.g., "Away Mode," "Vacation Mode," temporary boosts). Manual changes on the physical controller will be respected by Home Assistant and not overridden automatically.
+*Notes:*
+- *The MX400 is required by the installer for the specified hydraulic design (with buffer tank). It is not replaced by the EMS-ESP gateway.*
+- *The EMS-ESP gateway allows Home Assistant to monitor the system and orchestrate setpoints/modes.*
+- *A physical room controller (e.g., Buderus RC100) is still recommended for commissioning and as a reliable manual fallback.*
+- ***Hierarchy of Control:** To prevent conflicts, the Buderus controller (RC100) will own the primary heating schedule. Home Assistant will act as a supervisor, sending high-level commands for exceptions (e.g., "Away Mode," "Vacation Mode," temporary boosts). Manual changes on the physical controller will be respected by Home Assistant and not overridden automatically.*
 
 **Buderus support / warranty concern when connecting EMS-ESP (practical guidance)**
 
@@ -204,11 +204,11 @@ Notes:
 
 - Light dimmer: Shelly Dimmer Gen4
 
-**Notes to validate with electrician / fixture selection**
+*Notes to validate with electrician / fixture selection*
 
-- Confirm **neutral availability** and **mounting space** behind switches/junction boxes.
-- Validate LED **dimmer compatibility** (driver type, minimum load, flicker performance).
-- Validate LED **inrush current** vs relay/dimmer limits for each circuit group.
+- *Confirm **neutral availability** and **mounting space** behind switches/junction boxes.*
+- *Validate LED **dimmer compatibility** (driver type, minimum load, flicker performance).*
+- *Validate LED **inrush current** vs relay/dimmer limits for each circuit group.*
 
 ## 8) Safety
 
