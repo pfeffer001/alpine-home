@@ -114,6 +114,50 @@ Notes:
 - A physical room controller (e.g., Buderus RC100/RC200) is still recommended for commissioning and as a reliable manual fallback.
 - **Hierarchy of Control:** To prevent conflicts, the Buderus controller (RC100) will own the primary heating schedule. Home Assistant will act as a supervisor, sending high-level commands for exceptions (e.g., "Away Mode," "Vacation Mode," temporary boosts). Manual changes on the physical controller will be respected by Home Assistant and not overridden automatically.
 
+**How Home Assistant overrides the Buderus schedule (exception handling)**
+
+- **Principle:** HA does not rewrite the RC100 schedule. Instead it activates a vendor-supported *override mode* (preferably **Holiday/Vacation**) with an explicit end time, then returns control to the normal schedule.
+- **Typical precedence:** Safety bounds (freeze protection / max temp) > explicit HA override (time-bounded) > manual local override on RC100 > normal RC100 schedule.
+
+**Example voice command:** “Leaving for 2 weeks, turn the heating to eco mode.”
+
+- Assist/voice triggers a HA script that:
+  - Sets `heating_override = vacation` and `heating_override_until = now + 14 days`.
+  - Sends one high-level command via EMS-ESP:
+    - Best case: set Buderus to **Holiday/Vacation** until the end date (controller then ignores the normal schedule during that period).
+    - Fallback: set the heating circuit preset/setpoint to **Eco** (or a lower target room temp) and keep it there until the end date.
+- A second automation watches the `heating_override_until` timestamp and, when reached:
+  - Clears the override flag.
+  - Restores the previous operating mode (e.g., `auto` / scheduled), returning control to the RC100 schedule.
+
+**Short-term override example:** “Set heating to 21°C for the next 3 hours.”
+
+- HA treats this as a **temporary override** (`heating_override_type = boost` or `temporary_setpoint`) with `heating_override_until = now + 3 hours`.
+- HA sends a single coarse command via EMS-ESP (whichever is supported reliably in your setup):
+  - Set heating circuit to **manual/temporary** and apply a target room temperature (e.g., 21°C), or
+  - Switch to **Comfort** preset (if that effectively yields the desired temp), optionally adjusting the comfort setpoint.
+- When the timer expires, HA returns the circuit to **Auto/Scheduled** so the normal RC100 schedule resumes.
+
+**Implementation detail (HA-side state so it’s explainable)**
+
+- Track override state explicitly in HA (e.g., `input_boolean.heating_override_active` + `input_datetime.heating_override_until` + `select.heating_override_type` with values like `none|eco|vacation|boost`).
+- Keep the commands coarse: change only preset/mode/setpoint, not curves or frequent toggles.
+- If someone changes the RC100 manually during an active override, HA should either:
+  - Respect it and cancel the override (simplest), or
+  - Notify “Heating override was changed locally; keeping manual control.”
+
+**Can you control the Buderus heating schedule from the HA dashboard?**
+
+- **Usually not in a “true edit the RC100 schedule” way.** Most Buderus controllers don’t expose full schedule CRUD (create/read/update/delete) as clean entities that HA can edit. EMS-ESP typically gives you reliable monitoring + setpoints/modes/presets, but not a rich schedule editor UI.
+- **Recommended (low maintenance):** Keep the schedule in RC100 and put *override controls* on the HA dashboard:
+  - `Home/Away/Night` (mode)
+  - `Eco/Comfort` (preset)
+  - `Vacation until <date>` (time-bounded override)
+  - Optional: `Boost 1h` (temporary)
+- **If you insist on HA being the scheduler:** You can build the schedule in HA (Schedule helper / automations) and have HA set the Buderus preset/setpoint at those times.
+  - Tradeoff: more HA dependency and more “automation tuning” (against the guiding principles).
+  - Safer approach: set RC100 to a simple constant baseline and let HA do only predictable, coarse changes.
+
 **Indoor / outdoor sensing**
 
 - Indoor air quality: 6x Eve Room
