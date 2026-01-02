@@ -53,7 +53,6 @@ To keep maintenance low, define the boundary explicitly:
 ## 4) Home Intelligence Central (Rack)
 
 **Rack & power**
-
 - Rack: Digitus 10" 9U Wall Mount
 - Patch: 2x Digitus 10" 12-Port Keystone Panel
 - Patch cables: 24x 0.25m slim-line
@@ -61,7 +60,6 @@ To keep maintenance low, define the boundary explicitly:
 - UPS: Eaton 3S 700 DIN (external placement)
 
 **Network**
-
 - PoE Switch A: Ubiquiti UniFi Switch Ultra + with 210W Power Adapter (USW-Ultra-210W)
 - PoE Switch B: Ubiquiti UniFi Switch Lite 8 PoE
 - Internet router: TBD (ISP provided)
