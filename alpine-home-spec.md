@@ -53,8 +53,8 @@ To keep maintenance low, define the boundary explicitly:
 ## 4) Home Intelligence Central (Rack)
 
 **Rack & power**
-- Rack: [Digitus 10" 9U Wall Mount](https://www.digitus.info/en/products/network-and-server-cabinets/network-cabinets-wall-mounting/10-inch-wall-mounting-cabinets/dn-10-09u-1/)
-- Patch: 2x [Digitus 10" 12-Port Keystone Panel](https://www.digitus.info/en/products/network-and-server-cabinets/network-components/10-inch-network-components/dn-10-pan-12/)
+- Rack: [Digitus 10" 9U Wall Mount](https://de.assmann.shop/en/Network-and-Server-Cabinets/Network-Cabinets-Wall-Mounting/10-Wall-Mounting-Cabinets/Wall-mounted-enclosure-SOHO-Pro-254-mm-10-315x300-mm-WxD-var.html)
+- Patch: 2x [Digitus 10" 12-Port Keystone Panel](https://de.assmann.shop/en/Data-Network-Technology/Copper-Cabling/Patch-Panels/Modular-Patch-Panel-12-port-var.html?listtype=search&searchparam=10%22%2012-Port%20Keystone%20Panel)
 - Patch cables: 24x 0.25m slim-line
 - Power strip: [Digitus 10" Socket Strip (4x Schuko)](https://www.digitus.info/en/products/power-and-computer-accessories/power-distribution/power-strips/dn-95461/)
 - UPS: [Eaton 3S 700 DIN](https://www.eaton.com/de/en-gb/skuPage.3S700DIN.html) (external placement)
