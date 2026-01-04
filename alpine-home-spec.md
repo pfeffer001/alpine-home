@@ -56,7 +56,8 @@ To keep maintenance low, define the boundary explicitly:
 - Rack: [Digitus 10" 9U Wall Mount](https://de.assmann.shop/en/Network-and-Server-Cabinets/Network-Cabinets-Wall-Mounting/10-Wall-Mounting-Cabinets/Wall-mounted-enclosure-SOHO-Pro-254-mm-10-315x300-mm-WxD-var.html)
 - Patch: 2x [Digitus 10" 12-Port Keystone Panel](https://de.assmann.shop/en/Data-Network-Technology/Copper-Cabling/Patch-Panels/Modular-Patch-Panel-12-port-var.html?listtype=search&searchparam=10%22%2012-Port%20Keystone%20Panel)
 - Patch cables: 24x 0.25m slim-line
-- Power strip: [Digitus 10" Socket Strip (4x Schuko)](https://www.digitus.info/en/products/power-and-computer-accessories/power-distribution/power-strips/dn-95461/)
+- Power strip: [Digitus 10" Socket Strip (4x Schuko)](https://de.assmann.shop/de/Netzwerk-und-Serverschraenke/Steckdosenleisten-PDU/10-Steckdosenleiste-mit-Aluminiumprofil-4-fach-Schutzkontaktsteckdose.html?listtype=search)
+
 - UPS: [Eaton 3S 700 DIN](https://www.eaton.com/de/en-gb/skuPage.3S700DIN.html) (external placement)
 
 **Network**
@@ -104,7 +105,7 @@ To keep maintenance low, define the boundary explicitly:
 - System Controller: Buderus MX400 (required for buffer tank hydraulics)
 - Controller: [Buderus Logamatic RC100.2 (H)](https://www.buderus.de/de/produkte/catalogue/buderus-produkte/regelsysteme/system-bediengeraete/logamatic-rc100h)
 - External DHW tank: [Buderus Logalux SH290](https://www.buderus.de/de/produkte/catalogue/buderus-produkte/speicher/warmwasserspeicher/logalux-sh)
-- Gateway: [EMS-ESP via BBQKees Gateway](https://bbqkees-electronics.nl/product/gateway-e32-v2-9-wired-for-ems-bus/) (for HA communication)
+- Gateway: [EMS-ESP via BBQKees Gateway](https://bbqkees-electronics.nl/product/gateway-e32-v2-ethernet-wifi-edition-v2-kit/) (for HA communication)
 - Heating actuator relays: [Shelly Pro 4PM](https://www.shelly.com/products/shelly-pro-4pm)
 - Thermal actuators: [Möhlenhoff Alpha 5](https://www.moehlenhoff.de/en/products-solutions/actuators/alpha-5/) (230V NC)
 
