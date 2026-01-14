@@ -66,7 +66,8 @@ To keep maintenance low, define the boundary explicitly:
 - Internet router/firewall (10" rack): UniFi Cloud Gateway on shelf (ISP modem/ONT in bridge mode)
   - Preferred (future multi‑gig): [Cloud Gateway Max](https://store.ui.com/us/en/pro/category/all-unifi-cloud-gateways/products/ucg-max)
   - Budget (1 Gbit-class): [Cloud Gateway Ultra](https://store.ui.com/us/en/pro/category/all-unifi-cloud-gateways/products/ucg-ultra)
-  Note: There is HA Integrtation [UniFi Network](https://www.home-assistant.io/integrations/unifi/) available.
+ 
+  *Notes: There is HA Integrtation [UniFi Network](https://www.home-assistant.io/integrations/unifi/) available.*
 
 **Wi‑Fi**
 
