@@ -61,11 +61,12 @@ To keep maintenance low, define the boundary explicitly:
 - UPS: [Eaton 3S 700 DIN](https://www.eaton.com/de/en-gb/skuPage.3S700DIN.html) (external placement)
 
 **Network**
-- PoE Switch A: [Ubiquiti UniFi Switch Ultra](https://store.ui.com/us/en/pro/category/all-switching/products/usw-ultra) + with 210W Power Adapter (USW-Ultra-210W)
+- PoE Switch A: [Ubiquiti UniFi Switch Ultra](https://store.ui.com/us/en/category/switching-utility/collections/pro-ultra/products/usw-ultra-210w) + with 210W Power Adapter (USW-Ultra-210W)
 - PoE Switch B: [Ubiquiti UniFi Switch Lite 8 PoE](https://store.ui.com/us/en/pro/category/all-switching/products/usw-lite-8-poe)
 - Internet router/firewall (10" rack): UniFi Cloud Gateway on shelf (ISP modem/ONT in bridge mode)
   - Preferred (future multi‑gig): [Cloud Gateway Max](https://store.ui.com/us/en/pro/category/all-unifi-cloud-gateways/products/ucg-max)
   - Budget (1 Gbit-class): [Cloud Gateway Ultra](https://store.ui.com/us/en/pro/category/all-unifi-cloud-gateways/products/ucg-ultra)
+  Note: There is HA Integrtation [UniFi Network](https://www.home-assistant.io/integrations/unifi/) available.
 
 **Wi‑Fi**
 
