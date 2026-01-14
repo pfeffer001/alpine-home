@@ -67,7 +67,7 @@ To keep maintenance low, define the boundary explicitly:
   - Preferred (future multi‑gig): [Cloud Gateway Max](https://store.ui.com/us/en/pro/category/all-unifi-cloud-gateways/products/ucg-max)
   - Budget (1 Gbit-class): [Cloud Gateway Ultra](https://store.ui.com/us/en/pro/category/all-unifi-cloud-gateways/products/ucg-ultra)
  
-  *Notes: There is HA Integrtation [UniFi Network](https://www.home-assistant.io/integrations/unifi/) available.*
+  *Note: There is HA Integrtation [UniFi Network](https://www.home-assistant.io/integrations/unifi/) available.*
 
 **Wi‑Fi**
 
