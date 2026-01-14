@@ -77,7 +77,7 @@ To keep maintenance low, define the boundary explicitly:
 
 **Compute & radios**
 
-- Home Assistant server: [Minix Z150-0dB](https://minix.us/z150-0db) (Intel N150, 16GB RAM, 512GB SSD)
+- Home Assistant server: [MeLE Cyber X1 Mini PC N150](https://www.amazon.de/-/en/gp/product/B0FVFH1CQS/ref=ox_sc_act_title_2?smid=A1SZ0YT3IJ1MN4&th=1) (Intel N150, 32GB RAM, 512GB SSD)
 - Thread adapter: [Home Assistant Connect ZBT-2](https://www.home-assistant.io/connect/zbt-2) (USB extension)
 
 **Open design items**
